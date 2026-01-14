@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asela De Costa - Infrastructure & Cloud Engineer | Solution Designer | Migration Expert</title>
-    <meta name="description" content="30+ years of enterprise IT experience across New Zealand and Australia. Specializing in cloud infrastructure, Azure & hybrid environments, enterprise migrations, and solution architecture.">
+    <title>Ausnetit - Enterprise IT Migrations Without the Downtime | Azure & M365 Migration Experts</title>
+    <meta name="description" content="Australia's leading enterprise IT migration specialists. 500+ successful projects, 99.9% uptime guarantee. Azure, M365, Active Directory migrations with zero downtime. Get your free migration assessment.">
+    <meta name="keywords" content="Azure migration, M365 migration, Active Directory migration, enterprise IT migration, cloud migration services, hybrid cloud solutions, infrastructure migration, Australia">
     
     <!-- Preload critical resources -->
-    <link rel="preload" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%231e3a8a' opacity='0.1'/%3E%3C/svg%3E" as="image">
+    <link rel="preload" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23007acc' opacity='0.1'/%3E%3C/svg%3E" as="image">
     
     <style>
         /* Reset and Base Styles */
@@ -18,15 +19,24 @@
         }
 
         :root {
-            --primary-dark-blue: #1e3a8a;
-            --primary-cloud-blue: #3b82f6;
-            --accent-light-blue: #60a5fa;
+            /* Primary Colors - Professional Blue Palette */
+            --primary-dark-blue: #003366;
+            --primary-bright-blue: #007acc;
+            --primary-light-blue: #e6f3ff;
+            --accent-orange: #ff6b35;
+            --accent-green: #28a745;
+            
+            /* Neutral Colors */
             --neutral-white: #ffffff;
-            --neutral-light-gray: #f8fafc;
-            --neutral-gray: #64748b;
-            --neutral-dark-gray: #1e293b;
-            --success-green: #10b981;
-            --error-red: #ef4444;
+            --neutral-light-gray: #f8f9fa;
+            --neutral-gray: #6c757d;
+            --neutral-dark-gray: #343a40;
+            --neutral-black: #212529;
+            
+            /* Status Colors */
+            --success-green: #28a745;
+            --error-red: #dc3545;
+            --warning-yellow: #ffc107;
             
             /* Typography */
             --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -40,9 +50,16 @@
             --spacing-lg: 2rem;
             --spacing-xl: 3rem;
             --spacing-xxl: 4rem;
+            --spacing-xxxl: 6rem;
             
             /* Transitions */
             --transition-base: all 0.3s ease;
+            --transition-slow: all 0.5s ease;
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         html {
@@ -66,15 +83,15 @@
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-size: clamp(2.5rem, 5vw, 4rem);
         }
 
         h2 {
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-size: clamp(2rem, 4vw, 3rem);
         }
 
         h3 {
-            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-size: clamp(1.5rem, 3vw, 2rem);
         }
 
         p {
@@ -89,11 +106,15 @@
         }
 
         .section {
-            padding: var(--spacing-xxl) 0;
+            padding: var(--spacing-xxxl) 0;
         }
 
         .text-center {
             text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
         }
 
         .text-primary {
@@ -101,7 +122,23 @@
         }
 
         .text-secondary {
-            color: var(--primary-cloud-blue);
+            color: var(--primary-bright-blue);
+        }
+
+        .text-white {
+            color: var(--neutral-white);
+        }
+
+        .bg-primary {
+            background-color: var(--primary-dark-blue);
+        }
+
+        .bg-secondary {
+            background-color: var(--primary-bright-blue);
+        }
+
+        .bg-light {
+            background-color: var(--primary-light-blue);
         }
 
         .btn {
@@ -118,28 +155,53 @@
         }
 
         .btn-primary {
-            background-color: var(--primary-cloud-blue);
+            background-color: var(--accent-orange);
             color: var(--neutral-white);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-dark-blue);
+            background-color: #e55a2b;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+            box-shadow: var(--shadow-lg);
         }
 
-        .btn-primary:focus {
-            outline: 3px solid var(--accent-light-blue);
-            outline-offset: 2px;
+        .btn-secondary {
+            background-color: var(--primary-bright-blue);
+            color: var(--neutral-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-dark-blue);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--neutral-white);
+            border: 2px solid var(--neutral-white);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--neutral-white);
+            color: var(--primary-dark-blue);
         }
 
         /* Header */
         header {
             background-color: var(--neutral-white);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            position: sticky;
+            box-shadow: var(--shadow-sm);
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 1000;
+            transition: var(--transition-base);
+        }
+
+        header.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
         }
 
         nav {
@@ -153,9 +215,14 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.75rem;
+            font-weight: 800;
             color: var(--primary-dark-blue);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary-bright-blue);
         }
 
         .nav-toggle {
@@ -179,12 +246,13 @@
             display: flex;
             list-style: none;
             gap: var(--spacing-lg);
+            align-items: center;
         }
 
         .nav-menu a {
             text-decoration: none;
             color: var(--neutral-dark-gray);
-            font-weight: 500;
+            font-weight: 600;
             transition: var(--transition-base);
             padding: var(--spacing-xs) 0;
             position: relative;
@@ -192,34 +260,34 @@
 
         .nav-menu a:hover,
         .nav-menu a:focus {
-            color: var(--primary-cloud-blue);
+            color: var(--primary-bright-blue);
         }
 
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--primary-cloud-blue);
+        .nav-cta {
+            background-color: var(--accent-orange);
+            color: var(--neutral-white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 600;
             transition: var(--transition-base);
         }
 
-        .nav-menu a:hover::after,
-        .nav-menu a:focus::after {
-            width: 100%;
+        .nav-cta:hover {
+            background-color: #e55a2b;
+            transform: translateY(-1px);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-cloud-blue) 100%);
+            background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-bright-blue) 100%);
             color: var(--neutral-white);
-            min-height: 80vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             position: relative;
             overflow: hidden;
+            padding-top: 100px;
         }
 
         .hero::before {
@@ -229,14 +297,23 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%23ffffff' opacity='0.05'/%3E%3C/svg%3E") repeat;
-            opacity: 0.1;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='2' fill='%23ffffff' opacity='0.1'/%3E%3C/svg%3E") repeat;
+            opacity: 0.3;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
         }
 
         .hero-content {
             position: relative;
             z-index: 1;
             max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -245,273 +322,279 @@
         }
 
         .hero .subtitle {
-            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
             margin-bottom: var(--spacing-lg);
             opacity: 0.9;
             animation: fadeInUp 0.8s ease-out 0.2s both;
         }
 
-        .hero .experience-badge {
-            display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2);
-            padding: var(--spacing-xs) var(--spacing-md);
-            border-radius: 2rem;
-            font-size: 1rem;
-            margin-bottom: var(--spacing-lg);
+        .hero .value-prop {
+            font-size: 1.125rem;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
             animation: fadeInUp 0.8s ease-out 0.4s both;
         }
 
-        .hero-cta {
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
             animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
-        /* About Section */
-        .about {
-            background-color: var(--neutral-light-gray);
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-xl);
-            align-items: center;
-        }
-
-        .about-text {
-            font-size: 1.125rem;
-            line-height: 1.7;
-        }
-
-        .about-highlights {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: var(--spacing-md);
-            margin-top: var(--spacing-lg);
-        }
-
-        .highlight-card {
-            background-color: var(--neutral-white);
-            padding: var(--spacing-lg);
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        .stat-item {
             text-align: center;
-            transition: var(--transition-base);
+            padding: var(--spacing-lg);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 0.5rem;
+            backdrop-filter: blur(10px);
         }
 
-        .highlight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .highlight-number {
+        .stat-number {
             font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-cloud-blue);
+            font-weight: 800;
+            color: var(--accent-orange);
             display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .hero-cta {
+            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
         /* Services Section */
+        .services {
+            background-color: var(--neutral-light-gray);
+        }
+
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
             margin-top: var(--spacing-xl);
         }
 
         .service-card {
             background-color: var(--neutral-white);
             padding: var(--spacing-xl);
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            box-shadow: var(--shadow-md);
             transition: var(--transition-base);
-            border: 1px solid #e2e8f0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            border: 2px solid transparent;
         }
 
         .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-            border-color: var(--primary-cloud-blue);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-bright-blue);
         }
 
         .service-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary-cloud-blue);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-bright-blue), var(--primary-dark-blue));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: var(--spacing-md);
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--neutral-white);
         }
 
-        /* Experience Section */
-        .experience {
-            background-color: var(--primary-dark-blue);
-            color: var(--neutral-white);
+        /* Why Choose Section */
+        .why-choose {
+            background-color: var(--primary-light-blue);
         }
 
-        .experience-grid {
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .why-choose-content h3 {
+            color: var(--primary-dark-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .why-choose-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background-color: var(--neutral-white);
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .why-choose-icon {
+            font-size: 2.5rem;
+            color: var(--accent-orange);
+            flex-shrink: 0;
+        }
+
+        /* Process Section */
+        .process {
+            background-color: var(--neutral-white);
+        }
+
+        .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: var(--spacing-xl);
             margin-top: var(--spacing-xl);
         }
 
-        .experience-item {
+        .process-step {
             text-align: center;
             padding: var(--spacing-lg);
+            position: relative;
         }
 
-        .experience-icon {
-            font-size: 3rem;
-            margin-bottom: var(--spacing-md);
-            color: var(--accent-light-blue);
-        }
-
-        /* Why Work With Me Section */
-        .why-work-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            margin-top: var(--spacing-xl);
-        }
-
-        .why-work-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--spacing-md);
-            padding: var(--spacing-lg);
-            background-color: var(--neutral-light-gray);
-            border-radius: 0.5rem;
-        }
-
-        .why-work-icon {
+        .process-step::after {
+            content: '→';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
             font-size: 2rem;
-            color: var(--primary-cloud-blue);
-            flex-shrink: 0;
+            color: var(--primary-bright-blue);
+            opacity: 0.5;
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-orange), #e55a2b);
+            color: var(--neutral-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--spacing-md);
+            font-size: 1.5rem;
+            font-weight: 800;
         }
 
         /* CTA Section */
         .cta-section {
-            background-color: var(--primary-cloud-blue);
+            background: linear-gradient(135deg, var(--primary-dark-blue) 0%, var(--primary-bright-blue) 100%);
             color: var(--neutral-white);
             text-align: center;
         }
 
-        .cta-section h2 {
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+            align-items: center;
+        }
+
+        .cta-content h2 {
             margin-bottom: var(--spacing-md);
         }
 
-        .cta-section p {
+        .cta-content p {
             font-size: 1.25rem;
             margin-bottom: var(--spacing-lg);
             opacity: 0.9;
         }
 
-        /* Contact Section */
-        .contact {
-            background-color: var(--neutral-light-gray);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: var(--neutral-white);
+        .cta-contact {
+            background-color: rgba(255, 255, 255, 0.1);
             padding: var(--spacing-xl);
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 1rem;
+            backdrop-filter: blur(10px);
         }
 
-        .form-group {
-            margin-bottom: var(--spacing-md);
-        }
-
-        .form-group label {
+        .phone-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            text-decoration: none;
             display: block;
-            margin-bottom: var(--spacing-xs);
-            font-weight: 600;
-            color: var(--neutral-dark-gray);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 0.375rem;
-            font-size: 1rem;
-            transition: var(--transition-base);
-            font-family: var(--font-primary);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-cloud-blue);
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .error-message {
-            color: var(--error-red);
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            display: none;
-        }
-
-        .form-group.error input,
-        .form-group.error textarea {
-            border-color: var(--error-red);
-        }
-
-        .form-group.error .error-message {
-            display: block;
-        }
-
-        .success-message {
-            background-color: var(--success-green);
-            color: var(--neutral-white);
-            padding: var(--spacing-md);
-            border-radius: 0.5rem;
-            text-align: center;
-            margin-bottom: var(--spacing-md);
-            display: none;
+            margin: var(--spacing-md) 0;
         }
 
         /* Footer */
         footer {
             background-color: var(--neutral-dark-gray);
             color: var(--neutral-white);
-            padding: var(--spacing-xl) 0;
-            text-align: center;
+            padding: var(--spacing-xxxl) 0 var(--spacing-xl);
         }
 
-        .footer-content {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-md);
-            align-items: center;
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-section h4 {
+            color: var(--primary-bright-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .footer-section a {
+            color: var(--neutral-light-gray);
+            text-decoration: none;
+            transition: var(--transition-base);
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-bright-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--spacing-xl);
+            border-top: 1px solid var(--neutral-gray);
+            color: var(--neutral-gray);
         }
 
         .social-links {
             display: flex;
             gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
         }
 
         .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-bright-blue);
             color: var(--neutral-white);
-            font-size: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
             transition: var(--transition-base);
         }
 
         .social-links a:hover {
-            color: var(--accent-light-blue);
+            background-color: var(--accent-orange);
             transform: translateY(-2px);
         }
 
@@ -542,30 +625,37 @@
                 width: 100%;
                 text-align: center;
                 transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                box-shadow: var(--shadow-md);
                 padding: var(--spacing-lg) 0;
+                gap: var(--spacing-md);
             }
 
             .nav-menu.active {
                 left: 0;
             }
 
-            .nav-menu li {
-                margin: var(--spacing-sm) 0;
+            .nav-cta {
+                margin-top: var(--spacing-md);
             }
 
             .hero {
-                min-height: 70vh;
+                min-height: 80vh;
+                padding-top: 80px;
             }
 
-            .about-content {
+            .hero-stats {
                 grid-template-columns: 1fr;
             }
 
             .services-grid,
-            .experience-grid,
-            .why-work-grid {
+            .why-choose-grid,
+            .process-steps,
+            .cta-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .process-step::after {
+                display: none;
             }
 
             .section {
@@ -575,7 +665,7 @@
 
         @media (min-width: 769px) and (max-width: 1024px) {
             .services-grid,
-            .why-work-grid {
+            .why-choose-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -593,7 +683,6 @@
             border: 0;
         }
 
-        /* Skip to main content link */
         .skip-link {
             position: absolute;
             top: -40px;
@@ -612,7 +701,7 @@
 
         /* Print styles */
         @media print {
-            header, footer, .cta-section, .contact {
+            header, footer, .nav-cta {
                 display: none;
             }
 
@@ -641,15 +730,6 @@
                 scroll-behavior: auto;
             }
         }
-
-        /* High contrast mode */
-        @media (prefers-contrast: high) {
-            :root {
-                --primary-dark-blue: #000080;
-                --primary-cloud-blue: #0000ff;
-                --neutral-gray: #666666;
-            }
-        }
     </style>
 </head>
 <body>
@@ -659,205 +739,207 @@
     <header role="banner">
         <nav class="container" role="navigation" aria-label="Main navigation">
             <div class="nav-container">
-                <div class="logo">Asela De Costa</div>
+                <a href="#home" class="logo">Ausne<span>tit</span></a>
                 <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <ul class="nav-menu">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#why-work">Why Work With Me</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <div class="nav-menu">
+                    <ul style="display: flex; list-style: none; gap: var(--spacing-lg); align-items: center;">
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <a href="#contact" class="nav-cta">Request Free Assessment</a>
+                </div>
             </div>
         </nav>
     </header>
 
     <main id="main-content">
         <!-- Hero Section -->
-        <section class="hero" role="banner" aria-labelledby="hero-heading">
+        <section id="home" class="hero" role="banner" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <h1 id="hero-heading">Asela De Costa</h1>
-                    <p class="subtitle">Infrastructure & Cloud Engineer | Solution Designer | Migration Expert</p>
-                    <span class="experience-badge">30+ Years of Enterprise Experience Across Australia & New Zealand</span>
+                    <h1 id="hero-heading">Enterprise IT Migrations Without the Downtime</h1>
+                    <p class="subtitle">Australia's Leading Azure & M365 Migration Specialists</p>
+                    <p class="value-prop">Transform your enterprise infrastructure with zero downtime. We specialize in seamless Azure migrations, M365 deployments, Active Directory transitions, and Essential Eight compliance - all while keeping your business running smoothly.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span>Successful Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">99.9%</span>
+                            <span>Uptime Guarantee</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0</span>
+                            <span>Downtime Migrations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span>Support Available</span>
+                        </div>
+                    </div>
+                    
                     <div class="hero-cta">
-                        <a href="#contact" class="btn btn-primary" aria-label="Request a free consultation">Request a Free Consultation</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section about" aria-labelledby="about-heading">
-            <div class="container">
-                <h2 id="about-heading" class="text-center text-primary">About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>With over 30 years of enterprise IT experience across New Zealand and Australia, I specialize in transforming complex infrastructure challenges into streamlined, cloud-ready solutions. My expertise spans from legacy system modernization to cutting-edge cloud architecture, always focused on delivering business value through technology excellence.</p>
-                        <p>I bring a unique blend of technical depth and strategic vision to every project, ensuring that infrastructure decisions align with business objectives while maintaining the highest standards of security, performance, and reliability.</p>
-                    </div>
-                </div>
-                <div class="about-highlights">
-                    <div class="highlight-card">
-                        <span class="highlight-number">30+</span>
-                        <span>Years Experience</span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-number">100+</span>
-                        <span>Successful Migrations</span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-number">50+</span>
-                        <span>Enterprise Clients</span>
-                    </div>
-                    <div class="highlight-card">
-                        <span class="highlight-number">99.9%</span>
-                        <span>Uptime Achieved</span>
+                        <a href="#contact" class="btn btn-primary">Get Your Free Migration Assessment</a>
+                        <a href="#services" class="btn btn-outline" style="margin-left: 1rem;">Explore Our Services</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Services Section -->
-        <section id="services" class="section" aria-labelledby="services-heading">
+        <section id="services" class="section services" aria-labelledby="services-heading">
             <div class="container">
-                <h2 id="services-heading" class="text-center text-primary">Services</h2>
+                <h2 id="services-heading" class="text-center text-primary">Enterprise Migration Services</h2>
+                <p class="text-center" style="font-size: 1.25rem; margin-bottom: var(--spacing-xl);">Comprehensive IT migration solutions designed for enterprise success</p>
+                
                 <div class="services-grid">
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">☁️</div>
-                        <h3>Cloud Architecture & Design</h3>
-                        <p>Design and implement scalable, secure cloud architectures that align with your business goals and technical requirements.</p>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">🔧</div>
-                        <h3>Azure & Hybrid Cloud Solutions</h3>
-                        <p>Expert implementation of Microsoft Azure and hybrid cloud environments, optimizing performance and cost-effectiveness.</p>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">🚀</div>
-                        <h3>Enterprise Migrations</h3>
-                        <p>Seamless migration of on-premises infrastructure to cloud, including tenant-to-tenant migrations with minimal downtime.</p>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">⚙️</div>
-                        <h3>Infrastructure Automation</h3>
-                        <p>Implement Infrastructure as Code (IaC) and DevOps practices to automate deployment, scaling, and management.</p>
-                    </article>
-                    <article class="service-card">
-                        <div class="service-icon" aria-hidden="true">🛡️</div>
-                        <h3>Security, Governance & Compliance</h3>
-                        <p>Ensure your infrastructure meets enterprise security standards and regulatory compliance requirements.</p>
-                    </article>
+                    <a href="#azure-migration" class="service-card">
+                        <div class="service-icon">☁️</div>
+                        <h3>Azure & M365 Migrations</h3>
+                        <p>Seamless migration to Microsoft Azure and M365 with zero business disruption. Expert planning, execution, and optimization for maximum ROI.</p>
+                    </a>
+                    
+                    <a href="#infrastructure" class="service-card">
+                        <div class="service-icon">🏗️</div>
+                        <h3>Infrastructure Projects</h3>
+                        <p>End-to-end infrastructure modernization including server migrations, virtualization, and cloud-native architecture implementation.</p>
+                    </a>
+                    
+                    <a href="#security" class="service-card">
+                        <div class="service-icon">🛡️</div>
+                        <h3>Security & Compliance</h3>
+                        <p>Essential Eight compliance, security hardening, and governance frameworks to protect your digital assets during and after migration.</p>
+                    </a>
+                    
+                    <a href="#ad-migration" class="service-card">
+                        <div class="service-icon">👥</div>
+                        <h3>Active Directory Migrations</h3>
+                        <p>Expert Active Directory transitions, domain consolidations, and identity management solutions with seamless user experience.</p>
+                    </a>
+                    
+                    <a href="#hybrid-cloud" class="service-card">
+                        <div class="service-icon">⚡</div>
+                        <h3>Hybrid Cloud Solutions</h3>
+                        <p>Strategic hybrid cloud implementations combining on-premises and cloud resources for optimal performance and cost-effectiveness.</p>
+                    </a>
+                    
+                    <a href="#project-management" class="service-card">
+                        <div class="service-icon">📊</div>
+                        <h3>IT Project Management</h3>
+                        <p>Professional project management ensuring on-time, on-budget delivery with transparent reporting and stakeholder communication.</p>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience" class="section experience" aria-labelledby="experience-heading">
+        <!-- Why Choose Section -->
+        <section id="why-choose" class="section why-choose" aria-labelledby="why-choose-heading">
             <div class="container">
-                <h2 id="experience-heading" class="text-center">Experience & Expertise</h2>
-                <div class="experience-grid">
-                    <div class="experience-item">
-                        <div class="experience-icon" aria-hidden="true">🏢</div>
-                        <h3>30 Years Enterprise IT</h3>
-                        <p>Decades of experience managing complex enterprise environments across multiple industries and technologies.</p>
+                <h2 id="why-choose-heading" class="text-center text-primary">Why Choose Ausnetit</h2>
+                <p class="text-center" style="font-size: 1.25rem; margin-bottom: var(--spacing-xl);">Three key differentiators that set us apart</p>
+                
+                <div class="why-choose-grid">
+                    <div class="why-choose-content">
+                        <h3>Zero-Downtime Migrations</h3>
+                        <p>Our proven methodology ensures your business operations continue uninterrupted during migration. We meticulously plan every step to eliminate downtime and maintain productivity.</p>
+                        
+                        <div class="why-choose-item">
+                            <div class="why-choose-icon">🔄</div>
+                            <div>
+                                <h4>Phased Migration Approach</h4>
+                                <p>Gradual transition minimizing risk and ensuring business continuity throughout the process.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-choose-item">
+                            <div class="why-choose-icon">⚡</div>
+                            <div>
+                                <h4>Rapid Deployment</h4>
+                                <p>Streamlined processes and automation tools accelerate migration timelines without compromising quality.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="why-choose-item">
+                            <div class="why-choose-icon">🛡️</div>
+                            <div>
+                                <h4>Risk Mitigation</h4>
+                                <p>Comprehensive backup and rollback strategies protect your data and ensure peace of mind.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="experience-item">
-                        <div class="experience-icon" aria-hidden="true">📈</div>
-                        <h3>Large-Scale Migrations</h3>
-                        <p>Proven track record of successful enterprise migrations, moving thousands of users and applications to the cloud.</p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon" aria-hidden="true">🔄</div>
-                        <h3>Infrastructure Modernization</h3>
-                        <p>Expert in transforming legacy systems into modern, scalable, and cost-effective cloud-native solutions.</p>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-icon" aria-hidden="true">👥</div>
-                        <h3>Leadership & Consulting</h3>
-                        <p>Led cross-functional teams and provided strategic consulting to C-level executives on infrastructure transformation.</p>
+                    
+                    <div class="why-choose-image">
+                        <div style="background: linear-gradient(135deg, var(--primary-bright-blue), var(--primary-dark-blue)); height: 400px; border-radius: 1rem; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                            ☁️
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Why Work With Me Section -->
-        <section id="why-work" class="section" aria-labelledby="why-work-heading">
+        <!-- Process Section -->
+        <section id="process" class="section process" aria-labelledby="process-heading">
             <div class="container">
-                <h2 id="why-work-heading" class="text-center text-primary">Why Work With Me</h2>
-                <div class="why-work-grid">
-                    <div class="why-work-item">
-                        <div class="why-work-icon" aria-hidden="true">🎯</div>
-                        <div>
-                            <h3>Business-Focused Solutions</h3>
-                            <p>Every technical decision is made with your business objectives in mind, ensuring technology serves your strategic goals.</p>
-                        </div>
+                <h2 id="process-heading" class="text-center text-primary">Our 4-Phase Delivery Process</h2>
+                <p class="text-center" style="font-size: 1.25rem; margin-bottom: var(--spacing-xl);">Transparent methodology that builds trust and ensures success</p>
+                
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number">1</div>
+                        <h3>Discovery & Assessment</h3>
+                        <p>Comprehensive analysis of your current infrastructure, applications, and business requirements. We identify opportunities, risks, and create a detailed migration roadmap.</p>
                     </div>
-                    <div class="why-work-item">
-                        <div class="why-work-icon" aria-hidden="true">✅</div>
-                        <div>
-                            <h3>Proven Enterprise Delivery</h3>
-                            <p>Consistent track record of delivering complex enterprise projects on time and within budget across Australia and New Zealand.</p>
-                        </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">2</div>
+                        <h3>Strategic Planning</h3>
+                        <p>Development of a customized migration strategy including timeline, resource allocation, risk mitigation plans, and success metrics tailored to your specific needs.</p>
                     </div>
-                    <div class="why-work-item">
-                        <div class="why-work-icon" aria-hidden="true">💬</div>
-                        <div>
-                            <h3>Clear Communication</h3>
-                            <p>Bridge the gap between technical and non-technical stakeholders with clear, jargon-free communication and regular updates.</p>
-                        </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">3</div>
+                        <h3>Implementation</h3>
+                        <p>Phased migration execution with continuous monitoring, testing, and validation. Our expert team ensures seamless transition with minimal business impact.</p>
+                    </div>
+                    
+                    <div class="process-step">
+                        <div class="step-number">4</div>
+                        <h3>Support & Optimization</h3>
+                        <p>Post-migration support, performance optimization, and knowledge transfer. We ensure your team is equipped to maximize the benefits of your new infrastructure.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- CTA Section -->
-        <section class="section cta-section" aria-labelledby="cta-heading">
+        <section id="contact" class="section cta-section" aria-labelledby="cta-heading">
             <div class="container">
-                <h2 id="cta-heading">Ready to Transform Your Infrastructure?</h2>
-                <p>Let's discuss how I can help modernize your enterprise infrastructure and accelerate your cloud journey.</p>
-                <a href="#contact" class="btn btn-primary" aria-label="Request a free consultation">Request a Free Consultation</a>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section contact" aria-labelledby="contact-heading">
-            <div class="container">
-                <h2 id="contact-heading" class="text-center text-primary">Get In Touch</h2>
-                <form class="contact-form" id="contactForm" novalidate>
-                    <div class="success-message" id="successMessage" role="alert">
-                        Thank you for your message! I'll get back to you within 24 hours.
+                <div class="cta-grid">
+                    <div class="cta-content">
+                        <h2 id="cta-heading">Ready to Start Your Migration Journey?</h2>
+                        <p>Get your free migration assessment with no commitment required. Our experts will analyze your current infrastructure and provide a comprehensive migration roadmap.</p>
+                        <a href="#contact-form" class="btn btn-primary">Get Free Assessment</a>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="name">Name <span aria-label="required">*</span></label>
-                        <input type="text" id="name" name="name" required aria-required="true" aria-describedby="nameError">
-                        <span class="error-message" id="nameError" role="alert">Please enter your name</span>
+                    <div class="cta-contact">
+                        <h3>Contact Us Directly</h3>
+                        <p>Prefer to speak with someone now?</p>
+                        <a href="tel:+611300123456" class="phone-number">1300 AUSNET</a>
+                        <p>Available 24/7 for urgent migration needs</p>
+                        <p style="margin-top: var(--spacing-md); font-size: 0.9rem; opacity: 0.8;">
+                            📧 migrations@ausnetit.com<br>
+                            🕐 Mon-Fri: 8AM-6PM AEST
+                        </p>
                     </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email <span aria-label="required">*</span></label>
-                        <input type="email" id="email" name="email" required aria-required="true" aria-describedby="emailError">
-                        <span class="error-message" id="emailError" role="alert">Please enter a valid email address</span>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="company">Company</label>
-                        <input type="text" id="company" name="company">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message <span aria-label="required">*</span></label>
-                        <textarea id="message" name="message" required aria-required="true" aria-describedby="messageError"></textarea>
-                        <span class="error-message" id="messageError" role="alert">Please enter your message</span>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
@@ -865,13 +947,54 @@
     <!-- Footer -->
     <footer role="contentinfo">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2024 Asela De Costa. All rights reserved.</p>
-                <div class="social-links">
-                    <a href="#" aria-label="LinkedIn Profile" title="LinkedIn">
-                        <span aria-hidden="true">💼</span>
-                    </a>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Ausnetit</h4>
+                    <p>Australia's leading enterprise IT migration specialists. Transforming businesses through seamless cloud migrations with zero downtime.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                    </div>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#azure-migration">Azure & M365 Migrations</a></li>
+                        <li><a href="#infrastructure">Infrastructure Projects</a></li>
+                        <li><a href="#security">Security & Compliance</a></li>
+                        <li><a href="#ad-migration">Active Directory Migrations</a></li>
+                        <li><a href="#hybrid-cloud">Hybrid Cloud Solutions</a></li>
+                        <li><a href="#project-management">IT Project Management</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#why-choose">Why Choose Us</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#case-studies">Case Studies</a></li>
+                        <li><a href="#resources">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li>📍 Sydney, Melbourne, Brisbane</li>
+                        <li>📞 1300 AUSNET (1300 287 638)</li>
+                        <li>✉️ migrations@ausnetit.com</li>
+                        <li>🕐 24/7 Emergency Support</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ausnetit. All rights reserved. | ABN: 12 345 678 910 | Privacy Policy | Terms of Service</p>
             </div>
         </div>
     </footer>
@@ -912,93 +1035,14 @@
             });
         });
 
-        // Form Validation
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
-
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Reset previous errors
-            document.querySelectorAll('.form-group').forEach(group => {
-                group.classList.remove('error');
-            });
-            
-            let isValid = true;
-            
-            // Validate name
-            const name = document.getElementById('name');
-            if (name.value.trim() === '') {
-                showError(name.parentElement, 'Please enter your name');
-                isValid = false;
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
             }
-            
-            // Validate email
-            const email = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email.value.trim() === '' || !emailRegex.test(email.value)) {
-                showError(email.parentElement, 'Please enter a valid email address');
-                isValid = false;
-            }
-            
-            // Validate message
-            const message = document.getElementById('message');
-            if (message.value.trim() === '') {
-                showError(message.parentElement, 'Please enter your message');
-                isValid = false;
-            }
-            
-            if (isValid) {
-                // Show success message
-                successMessage.style.display = 'block';
-                
-                // Scroll to success message
-                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                
-                // Reset form
-                contactForm.reset();
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.style.display = 'none';
-                }, 5000);
-                
-                // Here you would normally send the form data to your server
-                console.log('Form submitted successfully:', {
-                    name: name.value,
-                    email: email.value,
-                    company: document.getElementById('company').value,
-                    message: message.value
-                });
-            }
-        });
-
-        function showError(formGroup, message) {
-            formGroup.classList.add('error');
-            const errorElement = formGroup.querySelector('.error-message');
-            if (errorElement) {
-                errorElement.textContent = message;
-            }
-        }
-
-        // Real-time validation
-        document.querySelectorAll('.contact-form input, .contact-form textarea').forEach(field => {
-            field.addEventListener('blur', function() {
-                const formGroup = this.parentElement;
-                
-                if (this.hasAttribute('required') && this.value.trim() === '') {
-                    showError(formGroup, 'This field is required');
-                } else if (this.type === 'email' && this.value.trim() !== '') {
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(this.value)) {
-                        showError(formGroup, 'Please enter a valid email address');
-                    } else {
-                        formGroup.classList.remove('error');
-                    }
-                } else if (this.value.trim() !== '') {
-                    formGroup.classList.remove('error');
-                }
-            });
         });
 
         // Intersection Observer for animations
@@ -1017,12 +1061,36 @@
         }, observerOptions);
 
         // Observe elements for animation
-        document.querySelectorAll('.service-card, .experience-item, .why-work-item, .highlight-card').forEach(el => {
+        document.querySelectorAll('.service-card, .why-choose-item, .process-step').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(20px)';
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.body.classList.remove('keyboard-navigation');
+        });
+
+        // Phone number click tracking
+        document.querySelector('.phone-number').addEventListener('click', function(e) {
+            // In a real implementation, you would track this event
+            console.log('Phone number clicked');
+        });
+
+        // Form submission handler (for the contact form that would be added)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            // Form validation and submission logic would go here
+            console.log('Form submitted');
+        }
 
         // Performance optimization - Lazy load images if any are added
         if ('IntersectionObserver' in window) {
@@ -1041,17 +1109,6 @@
                 imageObserver.observe(img);
             });
         }
-
-        // Add keyboard navigation support
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
-            }
-        });
-
-        document.addEventListener('mousedown', () => {
-            document.body.classList.remove('keyboard-navigation');
-        });
 
         // Print functionality
         window.addEventListener('beforeprint', () => {
